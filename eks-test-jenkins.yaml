@@ -17,7 +17,7 @@ vpc:
 nodeGroups:
   - name: ng-test-jenkins
     instanceType: t3.medium
-    desiredCapacity: 1
+    desiredCapacity: 2
     privateNetworking: true
   - name: ng-test-jenkins-spot
     minSize: 0
