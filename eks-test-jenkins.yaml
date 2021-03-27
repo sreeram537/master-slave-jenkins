@@ -13,7 +13,7 @@ vpc:
 
       us-east-2b:
         id: subnet-0017f77d
-        
+
 nodeGroups:
   - name: ng-test-jenkins
     instanceType: t3.medium
@@ -42,4 +42,4 @@ nodeGroups:
       withAddonPolicies:
         autoScaler: true
         cloudWatch: true
-        albIngress: tru
+        albIngress: true
