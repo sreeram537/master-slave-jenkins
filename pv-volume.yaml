@@ -11,7 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /data/jenkins-home/ 
-  awsElasticBlockStore:
-    volumeID: aws://us-east-2a/vol-0f00c29607751a106
-    fsType: ext4
+    path: "/mnt/data"
