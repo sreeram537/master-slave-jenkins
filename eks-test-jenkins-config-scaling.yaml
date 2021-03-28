@@ -17,7 +17,7 @@ vpc:
 nodeGroups:
   - name: ng-test-jenkins
     instanceType: m5.large
-    desiredCapacity: 0
+    desiredCapacity: 2
     privateNetworking: true
     minSize: 0
     maxSize: 2
