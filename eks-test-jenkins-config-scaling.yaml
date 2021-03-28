@@ -19,3 +19,5 @@ nodeGroups:
     instanceType: t3.medium
     desiredCapacity: 2
     privateNetworking: true
+    minSize: 0
+    maxSize: 2
