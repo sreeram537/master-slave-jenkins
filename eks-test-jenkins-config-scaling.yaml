@@ -1,0 +1,21 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-test-jenkins
+  region: us-east-2
+
+vpc:
+  subnets:
+    private:
+      us-east-2a:
+        id: subnet-9d9339f6
+
+      us-east-2b:
+        id: subnet-0017f77d
+
+nodeGroups:
+  - name: ng-test-jenkins
+    instanceType: t3.medium
+    desiredCapacity: 2
+    privateNetworking: true
