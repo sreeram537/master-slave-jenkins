@@ -16,8 +16,29 @@ vpc:
 
 nodeGroups:
   - name: ng-test-jenkins
-    instanceType: m5.large
-    desiredCapacity: 0
+    instanceType: t3.medium
+    desiredCapacity: 1
     privateNetworking: true
+  - name: ng-test-jenkins-spot
     minSize: 0
-    maxSize: 2
+    maxSize: 5
+    desiredCapacity: 1
+    privateNetworking: true
+    instancesDistribution:
+      instanceTypes: ["t3.medium"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 0
+      spotAllocationStrategy: capacity-optimized
+    labels:
+      lifecycle: Ec2Spot
+      intent: jenkins-agents
+      aws.amazon.com/spot: "true"
+    tags:
+      k8s.io/cluster-autoscaler/node-template/label/lifecycle: Ec2Spot
+      k8s.io/cluster-autoscaler/node-template/label/intent: jenkins-agents
+      k8s.io/cluster-autoscaler/node-template/label/aws.amazon.com/spot: "true"
+    iam:
+      withAddonPolicies:
+        autoScaler: true
+        cloudWatch: true
+        albIngress: true
