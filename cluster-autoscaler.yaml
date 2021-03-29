@@ -138,7 +138,7 @@ spec:
             - --stderrthreshold=info
             - --cloud-provider=aws
             - --skip-nodes-with-local-storage=false
-            - --nodes=0:5:19JFY1PFKZ3DK
+            - --nodes=0:5:eksctl-eks-test-jenkins-nodegroup-ng-test-jenkins-spot-NodeGroup-TKBQRS2GE5M8
           env:
             - name: AWS_REGION
               value: us-east-2
