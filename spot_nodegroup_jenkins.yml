@@ -4,7 +4,7 @@ metadata:
     name: eksworkshop-eksctl
     region: $AWS_REGION
 nodeGroups:
-    - name: jenkins-agents-2vcpu-8gb-spot
+    - name: ng-test-jenkins-spot
       minSize: 0
       maxSize: 5
       desiredCapacity: 1
