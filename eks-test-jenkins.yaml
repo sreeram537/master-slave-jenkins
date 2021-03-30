@@ -14,6 +14,7 @@ vpc:
       us-east-2b:
         id: subnet-0017f77d
 
+
 nodeGroups:
   - name: ng-test-jenkins
     instanceType: m5.xlarge
