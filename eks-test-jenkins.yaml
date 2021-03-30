@@ -32,11 +32,11 @@ nodeGroups:
     labels:
       lifecycle: Ec2Spot
       intent: apps
-      aws.amazon.com/spot: "true"
+      aws.amazon.com/spot: true
     tags:
       k8s.io/cluster-autoscaler/node-template/label/lifecycle: Ec2Spot
       k8s.io/cluster-autoscaler/node-template/label/intent: apps
-      k8s.io/cluster-autoscaler/node-template/label/aws.amazon.com/spot: "true"
+      k8s.io/cluster-autoscaler/node-template/label/aws.amazon.com/spot: true
     iam:
       withAddonPolicies:
         autoScaler: true
