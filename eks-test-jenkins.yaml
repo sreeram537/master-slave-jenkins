@@ -16,8 +16,6 @@ vpc:
 
 nodeGroups:
   - name: ng-test-jenkins
-    minSize: 1
-    maxSize: 1
     instanceType: t3.medium
     desiredCapacity: 1
     privateNetworking: true
@@ -27,18 +25,19 @@ nodeGroups:
     desiredCapacity: 0
     privateNetworking: true
     instancesDistribution:
-      instanceTypes: ["t3.medium"]
+      instanceTypes: ["t3.medium","t2.micro"]
       onDemandBaseCapacity: 0
       onDemandPercentageAboveBaseCapacity: 0
       spotInstancePools: 4
     labels:
       lifecycle: Ec2Spot
       intent: apps
-      aws.amazon.com/spot: true
+    taints:
+      spotInstance: "true:PreferNoSchedule"
     tags:
       k8s.io/cluster-autoscaler/node-template/label/lifecycle: Ec2Spot
       k8s.io/cluster-autoscaler/node-template/label/intent: apps
-      k8s.io/cluster-autoscaler/node-template/label/aws.amazon.com/spot: true
+      k8s.io/cluster-autoscaler/node-template/taint/spotInstance: "true:PreferNoSchedule"
     iam:
       withAddonPolicies:
         autoScaler: true
