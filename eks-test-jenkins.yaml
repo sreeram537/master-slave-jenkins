@@ -17,7 +17,7 @@ vpc:
 
 nodeGroups:
   - name: ng-test-jenkins
-    instanceType: m5.xlarge
+    instanceType: t3.medium
     desiredCapacity: 1
     privateNetworking: true
   - name: ng-test-jenkins-spot
