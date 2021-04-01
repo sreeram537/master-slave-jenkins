@@ -37,8 +37,12 @@ RUN apt-get update && \
     stable" && \
     apt-get update && \
     apt-get -y install docker-ce
-    
+
+Run chown jenkins:docker /var/run/docker.sock  
+
 RUN usermod -a -G docker jenkins    
+
+
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/3.40/remoting-3.40.jar && \
     chmod 755 /usr/share/jenkins && \
