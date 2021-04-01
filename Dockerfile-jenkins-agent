@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 
 
-
+RUN apt-get update && apt-get install -y unzip
 
 # Setup JNLP for jenkins slave
 RUN apt-get update && \
