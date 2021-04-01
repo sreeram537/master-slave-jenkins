@@ -44,6 +44,10 @@ RUN apt-get update && \
 
 RUN usermod -a -G docker jenkins  
 
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
+    && chmod +x ./kubectl \
+    && mv ./kubectl /usr/local/bin/kubectl
+
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/3.40/remoting-3.40.jar && \
     chmod 755 /usr/share/jenkins && \
     chmod 644 /usr/share/jenkins/slave.jar
