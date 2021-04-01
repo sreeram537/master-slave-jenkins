@@ -6,7 +6,7 @@ FROM ubuntu:18.04
 RUN apt-get update && apt-get install -y unzip
 
 # Install Packages
-RUN apt-get update && apt-get install git
+RUN apt-get update && apt-get install -y git
 
 # Setup JNLP for jenkins slave
 RUN apt-get update && \
